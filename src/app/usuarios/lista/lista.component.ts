@@ -10,12 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class ListaComponent implements OnInit {
   usuarios: UsuarioModel[] = [];
 
-  constructor(private usuarioService: UsuarioService) {}
+  constructor() {}
 
   ngOnInit(): void {
-    this.usuarioService.getUser().subscribe((users) => {
-      console.log(users);
-      this.usuarios = users;
-    });
+    // this.usuarioService.getUser().subscribe((users) => {
+    //   console.log(users);
+    //   this.usuarios = users;
+    // });
   }
 }
