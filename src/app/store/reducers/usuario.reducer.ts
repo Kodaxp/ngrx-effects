@@ -3,14 +3,14 @@ import { createReducer, on } from '@ngrx/store';
 import * as actions from '../actions';
 
 export interface UsuarioState {
-  users: UsuarioModel[];
+  user: UsuarioModel;
   loaded: boolean;
   loading: boolean;
   error: any;
 }
 
 export const UsuarioInitialState: UsuarioState = {
-  users: [],
+  user: new UsuarioModel(),
   loaded: false,
   loading: false,
   error: null,
