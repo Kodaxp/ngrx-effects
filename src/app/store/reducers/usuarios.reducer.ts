@@ -20,7 +20,12 @@ const _usuariosReducer = createReducer(
   usuariosInitialState,
   on(actions.cargarUsuarios, (state) => ({ ...state, loading: true })),
   on(actions.cargarUsuariosSuccess, (state, { usuarios }) => ({ ...state, loading: false, loaded: true, users: [...usuarios] })),
-  on(actions.cargarUsuariosError, (state, { payload }) => ({ ...state, loading: false, loaded: false, error: payload }))
+  on(actions.cargarUsuariosError, (state, { payload }) => ({
+    ...state,
+    loading: false,
+    loaded: false,
+    error: { url: payload.url, name: payload.name, message: payload.message },
+  }))
 );
 
 export function usuariosReducer(state, action) {

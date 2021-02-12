@@ -8,9 +8,9 @@ import { map } from 'rxjs/operators';
 export class UsuarioService {
   private URL = 'https://reqres.in/api';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getUsers() {
-    return this.http.get(`${this.URL}/users?per_page=6`).pipe(map((result) => result['data']));
+    return this.http.get(`${this.URL}/users?per_page=6&delay=3`).pipe(map((result) => result['data']));
   }
 }
